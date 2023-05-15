@@ -1,0 +1,190 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    color: #01B1EA;
+}
+
+a:visited {
+    color: #01B1EA;
+}
+
+a:hover {
+    color: #555555;
+}
+
+/* HEADER */
+#header {
+
+    height: 200px;
+    margin: 0 auto;
+    background-color: #F0F0F0;
+}
+
+#logo a {
+    float: left;
+    font-size: 40px;
+    letter-spacing: 4px;
+    font-family: 'Open Sans', Arial, Helvetica, sans-serif;
+    text-transform: uppercase;
+    color: #01B1EA;
+    font-weight: bold;
+    text-decoration: none;
+    margin-top: 35px;
+    margin-left: 15px;
+    text-shadow: 0px 2px 1px #222222;
+    transform: all 300ms;
+}
+
+#logo a:hover {
+    text-shadow: 0px 2px 1px #222222, 0px 0px 4px #01B1EA;
+}
+
+
+
+#logo img {
+    float: left;
+    width: 150px;
+    padding: 20px;
+}
+
+.product img {
+    width: 100px;
+}
+
+.tituloPrin {
+    font-size: 32px;
+}
+
+#container{
+    width: 80%;
+    margin: 0 auto;
+    box-shadow: 0px 0 0 0 gray;
+    background-color: white;
+}
+
+/* navegador */
+
+.cabecero {
+    height: 100px;
+    background-color: #222222;
+    display: flex;
+    align-items: center;
+    padding-left: 50px;
+}
+
+.cabecero li a {
+    text-decoration: none;
+    color: #F0F0F0;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-right: 4px;
+}
+
+.listado {
+ padding: 0px;
+}
+
+ul li{
+    padding: 4px;
+    display: inline;
+    margin-right: 20px;
+    border-right: 1px solid #eeeeee;
+    min-height: 100%;
+    
+}
+
+/* CONTENEDOR */
+
+#content {
+    display: flex;
+}
+
+#lateral {
+    width: 20%;
+    border-right: 1px solid black;
+    padding: 10px;
+}
+
+#central {
+    width: 80%;
+    padding: 50px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: left;
+}
+
+.product { 
+    margin-right: 50px;
+    margin-bottom: 50px;
+}
+.product p {
+    margin-bottom: 10px;
+}
+.product a {
+    margin-top: 10px;
+    background-color: rgb(16, 16, 16);
+    text-decoration: none;
+    color: white;
+    padding: 10px;
+    min-width: 100%;
+}
+
+input {
+    display: block;
+    width: 80%;
+}
+
+.block_aside {
+     display: block;
+     justify-content: center;
+}
+
+.block_aside a {
+    display: block;
+}
+
+.enlaces {
+    margin-top: 10px;
+    display: block;
+}
+
+.enlaces a {
+    font-size: 20px;
+}
+
+input[type='submit'] {
+    margin-top: 10px;
+    width: 20%;
+    text-align: center;
+    margin-left: 30%;
+    height: 30px;
+}
+
+label {
+    font-size: 24px;
+    text-align: center;
+}
+
+input[type='email'] {
+    height: 25px;
+}
+input[type='password'] {
+    height: 25px;
+}
+
+.entrada {
+    text-align: center;
+    background-color: #ccc;
+    padding: 4px;
+    border-bottom: 3px solid #01B1EA;
+    margin-bottom: 4px;
+}
+
+#footer {
+    margin-top: 200px;
+    background-color: #ccc;
+    padding: 10px;
+    color: white;
+}
