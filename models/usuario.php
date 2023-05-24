@@ -83,7 +83,7 @@ class Usuario {
 	 * @return mixed
 	 */
 	public function getPassword() {
-		return $this->password;
+		return password_hash($this->db->real_escape_string($this->password), PASSWORD_BCRYPT, ['cost' => 4]); // Encriptar las contraseñas
 	}
 	
 	/**
@@ -91,7 +91,7 @@ class Usuario {
 	 * @return self
 	 */
 	public function setPassword($password): self {
-		$this->password = password_hash($this->db->real_escape_string($this->password), PASSWORD_BCRYPT, ['cost' => 4]); // Encriptar las contraseñas
+		$this->password = $password;
 		return $this;
 	}
 
@@ -145,6 +145,31 @@ class Usuario {
 		}
         return $result;
     }
+
+	public function login(){
+		$result = false;
+
+		$email = $this->email;
+		$password = $this->password;
+
+		$sql = "SELECT * FROM usuarios WHERE email = '$email'";
+		$login = $this->db->query($sql);
+
+		if ($login && $login->num_rows == 1) {
+			$usuario = $login->fetch_object();
+
+			// Verificar la contraseña
+			// Comparar la contraseña introducida con la contraseña guardado hasheada
+			 $verify = password_verify($password, $usuario->password);
+			
+			if($verify){
+				$result = $usuario;
+			} 
+
+		}
+
+		return $result;
+	}
 
 
 
