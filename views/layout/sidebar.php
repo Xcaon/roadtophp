@@ -14,6 +14,7 @@
                     <input type="password" name="password">
                     <input type="submit" value="Enviar">
                 </form>
+                <a href="<?= base_url ?>/usuario/registro">Registrate aqui</a>
                 <?php else: ?>
                     <h3> <?= $_SESSION['identity']->nombre ?></h3>
                 <?php endif; ?>
@@ -22,7 +23,7 @@
                     <a href="#">Mis pedidos</a>
                     <?php if ( isset($_SESSION['admin'] )): ?>
                         <a href="#">Gestionar pedidos</a>
-                        <a href="#">Gestionar categorías</a>
+                        <a href="<?= base_url?>/categoria/index">Gestionar categorías</a>
                     <?php endif; ?>
 
                     <?php if ( isset($_SESSION['identity']) ): ?>

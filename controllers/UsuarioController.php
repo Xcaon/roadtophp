@@ -82,7 +82,7 @@ class usuarioController{
                 } else {
                     $_SESSION['error_login'] = 'Identificación fallida';
                 }
-                die();
+                
         }
         header("Location: " .base_url );
     }

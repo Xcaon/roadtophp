@@ -12,30 +12,24 @@
         <!-- CABECERO -->
     <header id="header">
         <div id="logo">
-            <img src="<?= base_url ?>views/assets/css/styles.css" alt="logo camiseta" />
+            <img src="<?= base_url ?>/views/assets/imagenes/percha.png" alt="logo camiseta" />
             <a class="tituloPrin" href="index.php">
                 Tienda de camisetas
             </a>    
         </div>
     </header>
     <!-- MENU, se usa la etiqueta nav para los menuis -->
+    <?php $categ =  Utils::showCategorias(); ?>
     <nav class="cabecero">
         <ul class="listado">
             <li>
                 <a href="#">Inicio</a>
             </li>
-            <li>
-                <a href="#">Categoría 1</a>
-            </li>
-            <li>
-                <a href="#">Categoría 2</a>
-            </li>
-            <li>
-                <a href="#">Categoría 3</a>
-            </li>
-            <li>
-                <a href="#">Categoría 4</a>
-            </li>
+            <?php while($cat = $categ->fetch_object()): ?>
+                <li>
+                    <a href="#" ><?= $cat->nombre ?></a>
+                </li>                
+            <?php endwhile; ?>
 
         </ul>
     </nav>

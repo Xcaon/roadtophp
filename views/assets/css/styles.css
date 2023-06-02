@@ -188,3 +188,15 @@ input[type='password'] {
     padding: 10px;
     color: white;
 }
+
+table {
+    text-align: center;
+    width: 100%;
+    border: 1px solid #555;
+}
+
+td {
+    border-top: 1px solid #555;
+    padding: 2px;
+}
+
