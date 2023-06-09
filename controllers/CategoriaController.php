@@ -1,12 +1,16 @@
 <?php
 
+// Requerimos el modelo Categoria
 require 'models/categoria.php';
 
 class categoriaController {
 
      function index(){
+        // Comprobamos si es admin para acceder a esta pagina
         Utils::isAdmin();
+        // Instanciamos un objeto
         $categoria = new Categoria();
+        // Recuperamos todas las categorias
         $categorias = $categoria->getAll();
 
         require_once 'views/categoria/index.php';
@@ -14,8 +18,7 @@ class categoriaController {
 
     function crear(){
         Utils::isAdmin();
-
-
+        // Cargo la interfaz de crear.php
         require_once 'views/categoria/crear.php';
     }
 

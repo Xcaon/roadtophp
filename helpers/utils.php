@@ -14,23 +14,26 @@ class Utils {
     }
 
     public static function isAdmin(){
+        // Si no es admin, lo volvemos al inicio
         if ( !isset($_SESSION["admin"]) ){
             header("Location: " . base_url);
         } else {
-            return true;
+            return true; // Sino devolvemos true
         }
 
     }
 
-    // ME DA EL FALLO AQUI
-//     // Fatal error
-// : Cannot declare class Categoria, because the name is already in use
     public static function showCategorias(){
         require_once 'models/categoria.php';
-        $cat = new Categoria();
-        $todos = $cat->getAll();
-        return $todos;
+
+        $categoria = new Categoria();
+
+        $categorias = $categoria->getAll();
+
+        return $categorias;
     }
+
+  
 
 }
 

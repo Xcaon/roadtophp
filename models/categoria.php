@@ -12,9 +12,10 @@ class Categoria {
         $this->db = Database::connect();
     }
 
+	// Guardar los valores del objeto como registro en la base de datos
 	public function save(){
 		
-
+		// Meter una variable this en la consulta
         $sql = "INSERT INTO categorias VALUES(null, '{$this->getNombre()}')";
         $save = $this->db->query($sql);
 
@@ -27,7 +28,7 @@ class Categoria {
 		}
         return $result;
 	}
-
+	// Retornar todas las categorias
     public function getAll(){
         $categorias = $this->db->query("SELECT * FROM categorias");
         return $categorias;

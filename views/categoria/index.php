@@ -11,10 +11,10 @@
             <th>NOMBRE</th>
         </tr>
         
-    <?php while ( $cat = $categorias->fetch_object()): ?>
+    <?php while ( $cat = $categorias->fetch_object("Categoria")): ?>
         <tr>
-            <td><?= $cat->id;?></td>
-            <td><?= $cat->nombre;?></td>    
+            <td><?= $cat->getId();  ?></td>
+            <td><?= $cat->getNombre();   ?></td>    
         </tr>
     <?php endwhile; ?>
 

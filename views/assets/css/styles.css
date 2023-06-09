@@ -3,6 +3,11 @@
     padding: 0;
 }
 
+.alert_green {
+    color: green;
+    font-size: 50px;
+}
+
 a {
     color: #01B1EA;
 }

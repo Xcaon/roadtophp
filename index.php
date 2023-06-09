@@ -16,13 +16,11 @@ function showError(){
         $error->index();
 }
 
-    // Parte del código que configura las rutas
-
-
-    if (isset($_GET['controller'])) { // Recogemos la variable de controller por Get y vemos que existe
-        $nombre_controlador = $_GET['controller'] . 'Controller'; // Recoge el valor del GET y le añade al string "Controller"
-    } elseif ( !isset($_GET['controller']) && !isset($_GET['action'])  ) { // Si no existe ninguno de los dos
-        $nombre_controlador = controller_default; // entonces cargamos uno por defecto con esta constante definida en parameters.php
+    // Parte del código que configura las rutas.
+    if (isset($_GET['controller'])) { // Recogemos la variable de controller por Get y vemos que existe.
+        $nombre_controlador = $_GET['controller'] . 'Controller'; // Recoge el valor del GET y le añade al string "Controller".
+    } elseif ( !isset($_GET['controller']) && !isset($_GET['action'])  ) { // Si no existe ninguno de los dos.
+        $nombre_controlador = controller_default; // entonces cargamos uno por defecto con esta constante definida en parameters.php.
     } else {
         echo "La pagina que buscar no existe";  // Si no existe el fichero, imprimimos este mensaje
         exit();
