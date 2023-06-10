@@ -3,7 +3,16 @@ require_once 'models/producto.php';
 class productoController {
 
    
+    function index(){
+        // Comprobamos si es admin para acceder a esta pagina
+        Utils::isAdmin();
+        // Instanciamos un objeto
+        $pro = new Producto();
+        // Recuperamos todas las categorias
+        $productos = $pro->getAll();
 
+        require_once 'views/producto/gestion.php';
+    }
 
     public function gestion(){
 

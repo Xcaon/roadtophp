@@ -1,7 +1,7 @@
 <?php
 
 // Requerimos el modelo Categoria
-require 'models/categoria.php';
+require_once 'models/categoria.php';
 
 class categoriaController {
 
