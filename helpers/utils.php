@@ -33,6 +33,25 @@ class Utils {
         return $categorias;
     }
 
+    public static function getOneProduct($id){
+		require_once 'models/producto.php';
+
+        $producto = new Producto();
+
+        $pro = $producto->getOne($id);
+
+        return $pro;
+	}
+
+    public static function getNombreIdCategoria($id){
+        require_once 'models/producto.php';
+        $cat = new Categoria();
+
+        $nombre = $cat->getNombreIdCategoria($id);
+
+        return $nombre;
+    }
+
   
 
 }

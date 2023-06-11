@@ -28,11 +28,49 @@ class Producto {
     }
     
 	public function save(){
-		$sql = "INSERT INTO productos VALUES(NULL, {$this->getCategoria_id()}, '{$this->getNombre()}', '{$this->getDescripcion()}', '{$this->getPrecio()}', '{$this->getStock()}', '{$this->getOferta()}', '{$this->getFecha()}' , 'aa')";
+		// Al acceder a una variable de la clase $this, si es tipo INT no se le ponen las comillas
+		$sql = "INSERT INTO productos VALUES(NULL, {$this->getCategoria_id()}, '{$this->getNombre()}', '{$this->getDescripcion()}', '{$this->getPrecio()}', '{$this->getStock()}', '{$this->getOferta()}', '{$this->getFecha()}' , '{$this->getImagen()}' )";
 		$save = $this->db->query($sql);
+
+	 	// echo $this->db->error;
+		// die();
 
 		$result = false;
 		if ( $save){
+			$result = true;
+		}
+
+		return $result;
+	}
+
+	public function delete(){
+		$sql = "DELETE FROM productos WHERE  id={$this->id}";
+		$delete = $this->db->query($sql);
+
+		$result = false;
+		if ($delete){
+			$result = true;
+		}
+
+		return $result;
+	}
+
+	public function getOne($id){
+		$sql = "SELECT * FROM productos WHERE id = $id";
+		$producto = $this->db->query($sql);
+		return $producto;
+	}
+
+	public function editar(){
+
+		// Al acceder a una variable de la clase $this, si es tipo INT no se le ponen las comillas
+		$sql = "UPDATE `productos` SET categoria_id = {$this->getCategoria_id()}, nombre = '{$this->getNombre()}', descripcion = '{$this->getDescripcion()}', precio = '{$this->getPrecio()}', stock = '{$this->getStock()}', oferta = '{$this->getOferta()}', fecha = '{$this->getFecha()}' , imagen = '{$this->getImagen()}'   WHERE id = {$this->getId()}";
+		$edit = $this->db->query($sql);
+
+	
+		
+		$result = false;
+		if ( $edit){
 			$result = true;
 		}
 

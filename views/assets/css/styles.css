@@ -12,12 +12,18 @@ a {
     color: #01B1EA;
 }
 
+a:hover {
+    color: #555555;
+}
+
 a:visited {
     color: #01B1EA;
 }
 
-a:hover {
-    color: #555555;
+
+
+.button-eliminar {
+    background-color: red;
 }
 
 /* HEADER */

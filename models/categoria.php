@@ -66,6 +66,13 @@ class Categoria {
 		return $this;
 	}
 
+	public function getNombreIdCategoria($id){
+		$sql = "SELECT nombre from categorias where id = $id";
+		$nombre = $this->db->query($sql);
+
+		return $nombre;
+	}
+
    
 
 
