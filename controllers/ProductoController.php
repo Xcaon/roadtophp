@@ -4,14 +4,14 @@ class productoController {
 
    
     function index(){
-        // Comprobamos si es admin para acceder a esta pagina
-        Utils::isAdmin();
-        // Instanciamos un objeto
-        $pro = new Producto();
-        // Recuperamos todas las categorias
-        $productos = $pro->getAll();
-
-        require_once 'views/producto/gestion.php';
+        
+        // // Instanciamos un objeto
+         $pro = new Producto();
+        // Recuperamos los productos ordenador para la pantalla de inicio
+        $productos = $pro->getRandom(6);
+        
+        // Requerimos la vista para imprimirla
+        require_once 'views/producto/destacados.php';
     }
 
     public function gestion(){

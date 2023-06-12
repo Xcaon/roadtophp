@@ -27,7 +27,7 @@
         </li>
         <?php while ($cat = $categorias->fetch_object('Categoria') ) : ?>
             <li>
-                <a href="#"><?= $cat->getNombre(); ?></a>
+                <a href="<?= base_url ?>categoria/ver&id=<?= $cat->getId(); ?>"><?= $cat->getNombre(); ?></a>
         </li>
         <?php endwhile; ?>
 

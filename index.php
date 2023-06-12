@@ -8,7 +8,6 @@ require_once 'views/layout/header.php';
 require_once 'views/layout/sidebar.php';
 
 
-
 // Mostrar errores
 function showError(){
     $error = new errorController();

@@ -35,6 +35,15 @@ class categoriaController {
     
         }
 
+     function ver(){
+        
+        if ( isset($_GET['id'])){
+            var_dump($_GET['id']);
+        }
+        
+        require_once 'views/categoria/ver.php';
+    }
+
 
 
 

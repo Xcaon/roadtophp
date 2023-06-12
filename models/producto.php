@@ -26,6 +26,12 @@ class Producto {
         $productos = $this->db->query("SELECT * FROM productos");
         return $productos;
     }
+
+	public function getRandom($limit){
+		$productos = $this->db->query("SELECT * FROM productos ORDER BY RAND() LIMIT $limit");
+
+		return $productos;
+	}
     
 	public function save(){
 		// Al acceder a una variable de la clase $this, si es tipo INT no se le ponen las comillas
