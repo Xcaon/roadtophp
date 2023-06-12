@@ -23,7 +23,7 @@
     <nav class="cabecero">
         <ul class="listado">
         <li>
-                <a href="#">Inicio</a>
+                <a href="<?= base_url ?>">Inicio</a>
         </li>
         <?php while ($cat = $categorias->fetch_object('Categoria') ) : ?>
             <li>

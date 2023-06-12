@@ -27,6 +27,17 @@ class Producto {
         return $productos;
     }
 
+	public function getAllCategory(){
+
+		$id = $this->getCategoria_id();
+		$sql = "SELECT p.*, c.nombre AS 'catnombre' FROM productos p "
+		. " INNER JOIN categorias c ON c.id = p.categoria_id " // Union de las tablas donde coincidan los ids
+		. " WHERE p.categoria_id = $id " // Los productos donde el categoria_id sera igual que el id que le pasamos de la categoria
+		. "ORDER BY id DESC"; // Ordenalos descendiente
+        $productos = $this->db->query($sql);
+        return $productos;
+    }
+
 	public function getRandom($limit){
 		$productos = $this->db->query("SELECT * FROM productos ORDER BY RAND() LIMIT $limit");
 

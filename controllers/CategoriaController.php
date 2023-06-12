@@ -2,6 +2,7 @@
 
 // Requerimos el modelo Categoria
 require_once 'models/categoria.php';
+require_once 'models/producto.php';
 
 class categoriaController {
 
@@ -34,21 +35,25 @@ class categoriaController {
             $categoria->save();
     
         }
-
-     function ver(){
-        
-        if ( isset($_GET['id'])){
-            var_dump($_GET['id']);
-        }
-        
-        require_once 'views/categoria/ver.php';
+        header("Location:" .base_url. "categoria/index");
     }
 
+    function ver(){
 
+        if (isset($_GET['id'])){
+            $id = $_GET['id'];
+            $categoria = new Categoria();
+            $categoria->setId($id);
+            $categoria = $categoria->getOne();
+            // Conseguimos productos
+            $producto = new Producto();
+            $producto->setCategoria_id($id);
+            $productos = $producto->getAllCategory();
+        }
 
+        
 
-
-        header("Location:" .base_url. "categoria/index");
+        require_once 'views/categoria/ver.php';
     }
 
 }

@@ -34,6 +34,12 @@ class Categoria {
         return $categorias;
     }
 
+	// Saca un objeto entero de categoria
+	public function getOne(){
+		$categoria = $this->db->query("SELECT * FROM categorias WHERE id={$this->getId()}");
+		return $categoria->fetch_object();
+	}
+
 	/**
 	 * @return mixed
 	 */
