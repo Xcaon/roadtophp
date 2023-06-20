@@ -4,6 +4,7 @@ require_once 'autoload.php';
 require_once 'config/db.php';
 require_once 'helpers/utils.php';
 require_once 'config/parameters.php';
+// Cargamos los layaouts para mostrar en la pagina
 require_once 'views/layout/header.php';
 require_once 'views/layout/sidebar.php';
 
